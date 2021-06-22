@@ -3,3 +3,4 @@
 Removes need to have an arrow in your inventory to use the Infinity I enchant on your bow.
 
 **Thanks to Myrathi for the original InfiniBows!**
+**Thanks to MeeniMc for the 1.17 port**

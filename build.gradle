@@ -1,9 +1,9 @@
 plugins {
-    id 'fabric-loom' version '0.7-SNAPSHOT'
+    id 'fabric-loom' version '0.8-SNAPSHOT'
 }
 
-sourceCompatibility = JavaVersion.VERSION_1_8
-targetCompatibility = JavaVersion.VERSION_1_8
+sourceCompatibility = JavaVersion.VERSION_16
+targetCompatibility = JavaVersion.VERSION_16
 
 archivesBaseName = project.archives_base_name
 version = project.mod_version
@@ -17,17 +17,6 @@ dependencies {
     modImplementation "net.fabricmc:fabric-loader:${project.loader_version}"
     // Technically don't need this, but will keep in just in case
     modImplementation "net.fabricmc.fabric-api:fabric-api:${project.fabric_version}"
-}
-
-processResources {
-    inputs.property "version", project.version
-    from(sourceSets.main.resources.srcDirs) {
-        include "fabric.mod.json"
-        expand "version": project.version
-    }
-    from(sourceSets.main.resources.srcDirs) {
-        exclude "fabric.mod.json"
-    }
 }
 
 // ensure that the encoding is set to UTF-8, no matter what the system default is
@@ -50,5 +39,5 @@ jar {
         ])
     }
     from "LICENSE"
-    archiveAppendix.set "1.16.x-fabric"
+    archiveAppendix.set "fabric"
 }
